@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Butterfly K-Beauty</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Figtree:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <div class="aviso-superior">Pedidos por WhatsApp</div>
+
+  <header class="encabezado">
+    <div class="barra-superior">
+      <span class="logo">Butterfly<small>K-Beauty</small></span>
+
+      <input class="buscador" id="buscar" type="search"
+             placeholder="Buscar" aria-label="Buscar producto o marca">
+
+      <div class="acciones-encabezado">
+        <a class="enlace-contacto" href="#" target="_blank" rel="noopener">Contáctame</a>
+
+        <button class="boton-bolsa" id="abrir-bolsa"
+                aria-expanded="false" aria-controls="bolsa">
+          Bolsa <b id="cantidad-bolsa">0</b>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="portada">
+      <div class="portada__texto">
+        <p class="portada__etiqueta">Skincare coreano</p>
+        <h1>Centella y cuidado de la piel, simple.</h1>
+        <p class="portada__descripcion">
+          Limpiadores, tónicos, sérums y cremas de SKIN1004, Celimax, Nida y más marcas de Corea.
+        </p>
+        <button class="boton-principal" id="ver-productos">Ver productos</button>
+      </div>
+
+      <div class="portada__imagen" id="imagen-portada"></div>
+    </section>
+
+    <div class="marcas" id="marcas" aria-label="Marcas"></div>
+
+    <div class="encabezado-productos" id="productos">
+      <h2>Productos<span id="contador-productos" aria-live="polite"></span></h2>
+
+      <select id="orden" aria-label="Ordenar">
+        <option value="destacados">Destacados</option>
+        <option value="precio-menor">Precio: menor a mayor</option>
+        <option value="precio-mayor">Precio: mayor a menor</option>
+        <option value="nombre">Nombre A–Z</option>
+      </select>
+    </div>
+
+    <div class="grilla" id="grilla"></div>
+
+  </main>
+
+  <footer class="pie-pagina">
+    Butterfly K-Beauty · Los pedidos se confirman por WhatsApp
+    <br>
+    <a class="enlace-contacto enlace-pie" href="#" target="_blank" rel="noopener">¿Dudas? Contáctame por WhatsApp</a>
+  </footer>
+
+  <div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-label="Detalle del producto">
+    <div class="modal__caja" id="modal-caja"></div>
+  </div>
+
+  <div class="fondo-oscuro" id="fondo-oscuro" hidden></div>
+
+  <aside class="bolsa" id="bolsa" hidden aria-label="Mi bolsa">
+
+    <div class="bolsa__cabecera">
+      <h2>Mi bolsa</h2>
+      <button class="boton-cerrar" id="cerrar-bolsa" aria-label="Cerrar bolsa">×</button>
+    </div>
+
+    <div class="bolsa__lista" id="lista-bolsa"></div>
+
+    <div class="bolsa__pie">
+      <div class="fila-total">
+        <span>Total</span>
+        <span id="total">$0</span>
+      </div>
+
+      <input id="nombre-cliente" placeholder="Tu nombre" aria-label="Tu nombre" autocomplete="name">
+
+      <textarea id="comentarios" rows="2"
+                placeholder="Comuna, dirección o comentarios (opcional)"
+                aria-label="Comentarios"></textarea>
+
+      <a class="boton-whatsapp" id="enviar-whatsapp" href="#" target="_blank" rel="noopener">
+        Enviar pedido por WhatsApp
+      </a>
+
+      <p class="ayuda" id="ayuda"></p>
+
+      <button class="boton-quitar boton-vaciar" id="vaciar-bolsa">Vaciar bolsa</button>
+    </div>
+
+  </aside>
+
+  <script src="js/config.js"></script>
+  <script src="js/productos.js"></script>
+  <script src="js/tienda.js"></script>
+</body>
+</html>
